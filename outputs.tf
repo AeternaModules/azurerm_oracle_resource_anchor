@@ -1,3 +1,7 @@
+output "oracle_resource_anchors_id" {
+  description = "Map of id values across all oracle_resource_anchors, keyed the same as var.oracle_resource_anchors"
+  value       = { for k, v in azurerm_oracle_resource_anchor.oracle_resource_anchors : k => v.id }
+}
 output "oracle_resource_anchors_linked_compartment_id" {
   description = "Map of linked_compartment_id values across all oracle_resource_anchors, keyed the same as var.oracle_resource_anchors"
   value       = { for k, v in azurerm_oracle_resource_anchor.oracle_resource_anchors : k => v.linked_compartment_id }
